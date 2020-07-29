@@ -1,9 +1,11 @@
 from struct import *
 
+
 FILENAME = "PYTHON.MUS"
 f = open(FILENAME, "rb")
 
 # Trailing commas prevent the value being returned as a tuple.
+
 
 def short():
     """
@@ -18,6 +20,7 @@ def short():
     short, = unpack("h", f.read(2))
     return short
 
+
 def float():
     """
     Read float, unpack, return.
@@ -31,8 +34,8 @@ def float():
     float, = unpack("f",f.read(4))
     return float
 
-
-# ITEM_NUMBER = 1
+TOTAL_COUNTER = short()
+ITEM_NUMBER = 0
 
 
 def make_item_set():
@@ -42,11 +45,20 @@ def make_item_set():
     """
     item_list = []
     item_counter = float()
+#    TOTAL_COUNTER -= 1
     item_list.append(item_counter)
     item_counter = int(item_counter + 1)
     if item_counter > 0:
         for parameter in range(item_counter - 1):
             item_list.append(float())
+#            TOTAL_COUNTER -= 1
     return(item_list)
 
 
+def assign_item_set():
+    if TOTAL_COUNTER > 0:
+        ITEM_NUMBER += 1
+        number = str(ITEM_NUMBER)
+#        item_"number" = make_item_set()
+
+    
