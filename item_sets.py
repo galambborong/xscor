@@ -40,14 +40,13 @@ def make_item_set():
     Create list, create counter. Loop through following data, appending
     to list, until counter = 0. Print list to screen.
     """
-    p_list = []
-    ITEM_COUNTER = float()
-    p_list.append(ITEM_COUNTER)
-    ITEM_COUNTER = int(p_list[0] + 1)
-    if ITEM_COUNTER > 0:
-        for p in range(ITEM_COUNTER - 1):
-            p_number = float()
-            p_list.append(p_number)
-    print(p_list)
+    item_list = []
+    item_counter = float()
+    item_list.append(item_counter)
+    item_counter = int(item_counter + 1)
+    if item_counter > 0:
+        for parameter in range(item_counter - 1):
+            item_list.append(float())
+    return(item_list)
 
 
