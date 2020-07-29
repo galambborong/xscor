@@ -4,24 +4,27 @@ FILENAME = "PYTHON.MUS"
 f = open(FILENAME, "rb")
 
 
-def file_counter():
-    (COUNTER,) = unpack("h", f.read(2))
-    return COUNTER
+def short():
+    short, = unpack("h", f.read(2))
+    return short
+
+def float():
+    float, = unpack("f",f.read(4))
+    return float
 
 
-ITEM_NUMBER = 1
-p_list = []
+# ITEM_NUMBER = 1
 
 
-def item_set():
-    (ITEM_COUNTER,) = unpack("f", f.read(4))
-    return ITEM_COUNTER
-    p_list.append(ITEM_COUNTER)
+def make_item_set():
+    p_list = []
+#    ITEM_COUNTER, = float() THIS DOESN'T WORK YOU FOOL
+    p_list.append(float())
+    ITEM_COUNTER = int(p_list[0] + 1)
     if ITEM_COUNTER > 0:
-        (p_number,) = unpack("f", f.read(4))
-        p_list.append(p_number)
-        ITEM_COUNTER -= 1
-        return p_number
-    else:
-        ITEM_NUMBER += 1
-        return item_set
+        for p in range(ITEM_COUNTER - 1):
+#            p_number, = float()
+            p_list.append(float())
+    print(p_list)
+
+
