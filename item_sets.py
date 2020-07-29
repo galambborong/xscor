@@ -41,13 +41,13 @@ def make_item_set():
     to list, until counter = 0. Print list to screen.
     """
     p_list = []
-#    ITEM_COUNTER, = float() THIS DOESN'T WORK YOU FOOL
-    p_list.append(float())
+    ITEM_COUNTER = float()
+    p_list.append(ITEM_COUNTER)
     ITEM_COUNTER = int(p_list[0] + 1)
     if ITEM_COUNTER > 0:
         for p in range(ITEM_COUNTER - 1):
-#            p_number, = float()
-            p_list.append(float())
+            p_number = float()
+            p_list.append(p_number)
     print(p_list)
 
 
