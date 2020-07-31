@@ -35,14 +35,15 @@ def float():
     return float
 
 
-TOTAL_COUNTER = short()
+FILE_SHORT = short()
+main_counter = FILE_SHORT - 6
 
 
 def make_item_set():
     """
     Create list, create counter. Loop through following data, appending
-    to list, until counter = 0. Enumerate, convert to dictionary whilst 
-    omitting the item_counter, return.
+    to list, until counter = 0. Enumerate to dictionary, omitting the
+    item_counter. Return.
     """
     item_list = []
     item_counter = float()
@@ -53,3 +54,15 @@ def make_item_set():
             item_list.append(float())
     p_list = dict(enumerate(item_list[1:], 1))
     return p_list
+#    return item_list
+
+
+def file_list():
+    file_list = []
+    x = make_item_set
+    global main_counter
+    counter = main_counter
+    if counter > 0:
+        for item in range(counter - int(len(x()))):
+            file_list.append(x())
+    return file_list
