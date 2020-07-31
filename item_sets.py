@@ -51,7 +51,5 @@ def make_item_set():
     if item_counter > 0:
         for parameter in range(item_counter - 1):
             item_list.append(float())
-    item_set = list(enumerate(item_list))
-    x = item_set[1:-1]
-    p_list = dict(x)
+    p_list = dict(enumerate(item_list[1:], 1))
     return p_list
