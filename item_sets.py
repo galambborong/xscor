@@ -57,18 +57,16 @@ def make_item_set():
 
 
 def read_file_data():
+    """
+    Create list, call file counter and file diff. While TOTAL_COUNTER
+    is less than the COUNTER_DIFF, call make_item_set function, append
+    to list, and add item numbers to TOTAL_COUNTER. Return full file.
+    """
+    file_list = []
     global TOTAL_COUNTER
     global COUNTER_DIFF
     while TOTAL_COUNTER < COUNTER_DIFF:
-        item_list = []
-        file_list = []
-        item_counter = float()
-        item_list.append(item_counter)
-        TOTAL_COUNTER -= item_counter
-        item_counter = int(item_counter + 1)
-        if item_counter > 0:
-            for parameter in range(item_counter - 1):
-                item_list.append(float())
-        p_list = dict(enumerate(item_list[1:], 1))
-        file_list.append(p_list)
-        return file_list
+        y = make_item_set()
+        file_list.append(y)
+        TOTAL_COUNTER += len(y) + 1
+    return file_list
