@@ -1,6 +1,5 @@
 from struct import *
 
-
 FILENAME = "PYTHON.MUS"
 f = open(FILENAME, "rb")
 
@@ -36,7 +35,8 @@ def float():
 
 
 FILE_SHORT = short()
-main_counter = FILE_SHORT - 6
+COUNTER_DIFF = FILE_SHORT - 6
+TOTAL_COUNTER = 0
 
 
 def make_item_set():
@@ -54,15 +54,21 @@ def make_item_set():
             item_list.append(float())
     p_list = dict(enumerate(item_list[1:], 1))
     return p_list
-#    return item_list
 
 
-def file_list():
-    file_list = []
-    x = make_item_set
-    global main_counter
-    counter = main_counter
-    if counter > 0:
-        for item in range(counter - int(len(x()))):
-            file_list.append(x())
-    return file_list
+def read_file_data():
+    global TOTAL_COUNTER
+    global COUNTER_DIFF
+    while TOTAL_COUNTER < COUNTER_DIFF:
+        item_list = []
+        file_list = []
+        item_counter = float()
+        item_list.append(item_counter)
+        TOTAL_COUNTER -= item_counter
+        item_counter = int(item_counter + 1)
+        if item_counter > 0:
+            for parameter in range(item_counter - 1):
+                item_list.append(float())
+        p_list = dict(enumerate(item_list[1:], 1))
+        file_list.append(p_list)
+        return file_list
