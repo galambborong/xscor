@@ -60,13 +60,13 @@ def read_file_data():
     """
     Create list, call file counter and file diff. While TOTAL_COUNTER
     is less than the COUNTER_DIFF, call make_item_set function, append
-    to list, and add item numbers to TOTAL_COUNTER. Return full file.
+    to list, and add item numbers to TOTAL_COUNTER, loop and return.
     """
     file_list = []
     global TOTAL_COUNTER
     global COUNTER_DIFF
     while TOTAL_COUNTER < COUNTER_DIFF:
-        y = make_item_set()
-        file_list.append(y)
-        TOTAL_COUNTER += len(y) + 1
+        x = make_item_set()
+        file_list.append(x)
+        TOTAL_COUNTER += len(x) + 1
     return file_list
