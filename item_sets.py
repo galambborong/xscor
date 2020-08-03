@@ -14,7 +14,8 @@ def short():
     Python type: integer
     Standard size: 2 bytes
 
-    See https://docs.python.org/3/library/struct.html#format-characters for more info
+    For more information, see:
+    https://docs.python.org/3/library/struct.html#format-characters
     """
     (short,) = unpack("h", f.read(2))
     return short
@@ -28,7 +29,8 @@ def float():
     Python type: float
     Standard size: 4 bytes
 
-    See https://docs.python.org/3/library/struct.html#format-characters for more info
+    For more information, see:
+    https://docs.python.org/3/library/struct.html#format-characters
     """
     (float,) = unpack("f", f.read(4))
     return float
@@ -36,7 +38,7 @@ def float():
 
 FILE_SHORT = short()
 COUNTER_DIFF = FILE_SHORT - 6
-TOTAL_COUNTER = 0
+total_counter = 0
 
 
 def make_item_set():
@@ -60,13 +62,14 @@ def read_file_data():
     """
     Create list, call file counter and file diff. While TOTAL_COUNTER
     is less than the COUNTER_DIFF, call make_item_set function, append
-    to list, and add item's parameter number to TOTAL_COUNTER, loop. Return.
+    to list, and add item's parameter number to TOTAL_COUNTER, loop.
+    Return.
     """
     file_list = []
-    global TOTAL_COUNTER
+    global total_counter
     global COUNTER_DIFF
-    while TOTAL_COUNTER < COUNTER_DIFF:
+    while total_counter < COUNTER_DIFF:
         x = make_item_set()
         file_list.append(x)
-        TOTAL_COUNTER += len(x) + 1
+        total_counter += len(x) + 1
     return file_list
