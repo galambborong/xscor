@@ -60,7 +60,7 @@ def read_file_data():
     """
     Create list, call file counter and file diff. While TOTAL_COUNTER
     is less than the COUNTER_DIFF, call make_item_set function, append
-    to list, and add item numbers to TOTAL_COUNTER, loop and return.
+    to list, and add item's parameter number to TOTAL_COUNTER, loop. Return.
     """
     file_list = []
     global TOTAL_COUNTER
