@@ -1,5 +1,9 @@
 from item_sets import *
 
+"""
+This is purely for shortlisting things in
+my working. 
+"""
 
 x = read_file_data()
 
