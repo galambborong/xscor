@@ -4,13 +4,17 @@ from item_sets import *
 x = read_file_data()
 
 
-class Parameters:
+class Item:
 
-    def __init__(self, code, p2, p3, p4, *args):
+    def __init__(self, code, stave_no, p3, *args, **kwargs):
         self.code = code
-        self.p2 = p2
+        self.stave_no = stave_no
         self.p3 = p3
-        self.p4 = p4
+
+class Notes(Item):
+    
+    def __init__(self, code, stave_no, p3, *args, **kwargs):
+        super().__init__(code, stave_no, p3)
 
     @classmethod
     def from_list(cls, p_list):

@@ -1,5 +1,18 @@
 from struct import *
 
+
+"""
+    For information on struct and binary data types, see
+    https://docs.python.org/3/library/struct.html#format-characters
+
+    Types used:
+
+    C type: short, Python: integer, 2 bytes
+    C type: float, Python: float, 4 bytes
+
+"""
+
+
 FILENAME = "PYTHON.MUS"
 f = open(FILENAME, "rb")
 
@@ -7,31 +20,11 @@ f = open(FILENAME, "rb")
 
 
 def short():
-    """
-    Read short, unpack, return.
-
-    C type: short
-    Python type: integer
-    Standard size: 2 bytes
-
-    For more information, see:
-    https://docs.python.org/3/library/struct.html#format-characters
-    """
     (short,) = unpack("h", f.read(2))
     return short
 
 
 def float():
-    """
-    Read float, unpack, return.
-
-    C type: float
-    Python type: float
-    Standard size: 4 bytes
-
-    For more information, see:
-    https://docs.python.org/3/library/struct.html#format-characters
-    """
     (float,) = unpack("f", f.read(4))
     return float
 
@@ -42,11 +35,6 @@ total_counter = 0
 
 
 def make_item_set():
-    """
-    Create list, create counter. Loop through following data, appending
-    to list, until counter = 0. Enumerate to dictionary, omitting the
-    item_counter. Return.
-    """
     item_list = []
     item_counter = float()
     item_list.append(item_counter)
@@ -59,12 +47,6 @@ def make_item_set():
 
 
 def read_file_data():
-    """
-    Create list, call file counter and file diff. While TOTAL_COUNTER
-    is less than the COUNTER_DIFF, call make_item_set function, append
-    to list, and add item's parameter number to TOTAL_COUNTER, loop.
-    Return.
-    """
     file_list = []
     global total_counter
     global COUNTER_DIFF
